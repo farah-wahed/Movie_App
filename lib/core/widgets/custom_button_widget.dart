@@ -19,6 +19,10 @@ class CustomButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    var theme = Theme.of(context);
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -35,11 +39,17 @@ class CustomButtonWidget extends StatelessWidget {
       child: child ??
           Text(
             buttonText,
+<<<<<<< HEAD
             style: TextStyle(
               color: textColor ?? AppColors.background,
               fontWeight: FontWeight.w600,
               fontSize: 16,
             ),
+=======
+            style: theme.textTheme.titleLarge?.copyWith(
+              color: textColor ?? AppColors.background,
+            )
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
           ),
     );
   }
