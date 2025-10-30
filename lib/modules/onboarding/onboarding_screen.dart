@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../config/routes.dart';
 import '../../core/constants/app_assets.dart';
 import '../../core/constants/app_colors.dart';
+=======
+import 'package:movies_app/core/constants/const_data.dart';
+import 'package:movies_app/models/onboarding_page_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../config/routes.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/widgets/custom_button_widget.dart';
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -15,6 +24,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
+<<<<<<< HEAD
   final List<Map<String, String>> _pages = [
     {
       'image': AppAssets.on1,
@@ -64,6 +74,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     await prefs.setBool('onboardingSeen', true);
     Navigator.pushReplacementNamed(context, AppRoutes.login);
   }
+=======
+  final List<OnboardingPageModel> _pages = ConstData.pages;
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
 
   void _nextPage() async {
     if (_currentPage < _pages.length - 1) {
@@ -77,10 +90,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       Navigator.pushReplacementNamed(context, AppRoutes.login);
     }
   }
+<<<<<<< HEAD
   void _prevPage() {
     if (_currentPage > 0) {
       _pageController.previousPage(
         duration:Duration(milliseconds: 400),
+=======
+
+  void _prevPage() {
+    if (_currentPage > 0) {
+      _pageController.previousPage(
+        duration: Duration(milliseconds: 400),
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
         curve: Curves.easeInOut,
       );
     }
@@ -88,6 +109,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    var theme = Theme.of(context);
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
     return Scaffold(
       backgroundColor: AppColors.background,
       body: PageView.builder(
@@ -97,6 +122,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           setState(() => _currentPage = index);
         },
         itemBuilder: (context, index) {
+<<<<<<< HEAD
           final page = _pages[index];
 
           if (index == 0) {
@@ -165,12 +191,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               Image.asset(page['image']!, fit: BoxFit.cover),
               Container(color: Colors.black.withOpacity(0.3)),
+=======
+          return Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.asset(_pages[index].image, fit: BoxFit.cover),
+              Container(color: Colors.black38),
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   width: double.infinity,
+<<<<<<< HEAD
                   padding: EdgeInsets.symmetric(
                       horizontal: 24, vertical: 30),
+=======
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
                   decoration: BoxDecoration(
                     color: AppColors.background,
                     borderRadius: BorderRadius.only(
@@ -182,6 +219,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
+<<<<<<< HEAD
                         page['title']!,
                         textAlign: TextAlign.center,
                         style:TextStyle(
@@ -249,6 +287,58 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                           ),
                         ),
+=======
+                        _pages[index].title,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.headlineSmall
+                      ),
+                      SizedBox(height: 10),
+                      if ((index != _pages.length - 1)) ...[
+                        Text(
+                          _pages[index].description,
+                          textAlign: TextAlign.center,
+                          style:  theme.textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w400
+                          )
+                        ),
+                        SizedBox(height: 25),
+                      ],
+
+                      Column(
+                        children: [
+                          SizedBox(
+                            width: double.infinity,
+                            child: CustomButtonWidget(
+                              onPressed: _nextPage,
+                              buttonText: _pages[index].buttonText,
+                              backgroundColor: AppColors.primary,
+                              textColor: AppColors.background,
+                            ),
+                          ),
+
+                          if (index != 0) ...[
+                            Padding(
+                              padding: const EdgeInsets.only(top: 12),
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: CustomButtonWidget(
+                                  onPressed: _prevPage,
+                                  buttonText: 'Back',
+                                  backgroundColor: Colors.transparent,
+                                  textColor: AppColors.primary,
+                                  child: Text(
+                                    'Back',
+                                    style:theme.textTheme.titleLarge?.copyWith(
+                                      color: AppColors.primary,
+                                    )
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
                     ],
                   ),
                 ),
@@ -260,5 +350,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 538b547 (splash and onboarding and auth ui handling)
