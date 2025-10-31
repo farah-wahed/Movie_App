@@ -1,20 +1,7 @@
-import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import '../constants/app_colors.dart';
 
-class AppTheme {
-  static ThemeData get darkTheme {
-    return ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: AppColors.primary,
-      scaffoldBackgroundColor: AppColors.background,
-      textTheme: TextTheme(
-        bodyMedium: TextStyle(color: AppColors.text),
-      ),
-      fontFamily: '',
-    );
-  }
-=======
+import 'dart:ui';
+import 'package:flutter/material.dart';
+
 import '../../gen/fonts.gen.dart';
 import '../constants/app_colors.dart';
 
@@ -51,8 +38,6 @@ class AppTheme {
           ),
         ),
 
-
-
      appBarTheme: AppBarTheme(
        backgroundColor: Colors.transparent,
        centerTitle: true,
@@ -65,5 +50,5 @@ class AppTheme {
        ),
      ),
    );
->>>>>>> 538b547 (splash and onboarding and auth ui handling)
+
 }

@@ -7,10 +7,8 @@ class CustomTextFormField extends StatefulWidget {
   final Widget? prefixIcon;
   final bool isPassword;
   final TextEditingController? controller;
-<<<<<<< HEAD
-=======
+
   final String? Function(String?)? validator;
->>>>>>> 538b547 (splash and onboarding and auth ui handling)
 
   const CustomTextFormField({
     super.key,
@@ -19,10 +17,9 @@ class CustomTextFormField extends StatefulWidget {
     this.isPassword = false,
     this.controller,
     this.prefixIcon,
-<<<<<<< HEAD
-=======
+
     this.validator,
->>>>>>> 538b547 (splash and onboarding and auth ui handling)
+
   });
 
   @override
@@ -34,15 +31,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return TextField(
-      controller: widget.controller,
-      obscureText: widget.isPassword ? !_isVisible : false,
-      style: const TextStyle(color: AppColors.text),
-      decoration: InputDecoration(
-        hintText: widget.hintText,
-        hintStyle: const TextStyle(color: AppColors.text),
-=======
     var theme = Theme.of(context);
     return TextFormField(
       controller: widget.controller,
@@ -52,7 +40,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: theme.textTheme.bodyLarge ,
->>>>>>> 538b547 (splash and onboarding and auth ui handling)
+
         prefixIcon: widget.iconPath != null
             ? Padding(
           padding: const EdgeInsets.all(12.0),

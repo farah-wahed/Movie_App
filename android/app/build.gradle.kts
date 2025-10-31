@@ -8,11 +8,9 @@ plugins {
 android {
     namespace = "com.example.movies_app"
     compileSdk = flutter.compileSdkVersion
-<<<<<<< HEAD
-    ndkVersion = flutter.ndkVersion
-=======
+
     ndkVersion =  android.ndkVersion ?: "27.0.12077973"
->>>>>>> 538b547 (splash and onboarding and auth ui handling)
+
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

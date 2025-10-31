@@ -1,6 +1,6 @@
-import 'package:movies_app/models/onboarding_page_model.dart';
 
 import '../../gen/assets.gen.dart';
+import '../../models/onboarding_page_model.dart';
 
 class ConstData{
 static final page1 =   OnboardingPageModel(

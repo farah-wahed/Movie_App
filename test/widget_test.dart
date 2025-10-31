@@ -13,11 +13,8 @@ import 'package:movies_app/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-<<<<<<< HEAD
-    await tester.pumpWidget(const MyApp());
-=======
+
     await tester.pumpWidget(const MyApp() as Widget);
->>>>>>> 538b547 (splash and onboarding and auth ui handling)
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
@@ -32,10 +29,3 @@ void main() {
     expect(find.text('1'), findsOneWidget);
   });
 }
-<<<<<<< HEAD
-=======
-
-class MyApp {
-  const MyApp();
-}
->>>>>>> 538b547 (splash and onboarding and auth ui handling)
